@@ -1,0 +1,45 @@
+<!--
+Design is made on twitter bootstrap, but i was asked to make it on material design
+so i would better style standart html elements, rather then using material design
+-->
+<div class="chat">
+  <header class="chat__header">
+    Chat
+  </header>
+  <div class="chat__content-outer">
+    <div class="chat__content">
+      <div class="chat__messages">
+        <div class="messages">
+          <div class="messages__item" *ngFor="let message of messages">
+            ({{ message.time | date:'hh:mm' }})
+            <span class="username" (dblclick)="insertUsername(message.username)">{{ message.username }}:</span>
+            {{ message.text }}
+          </div>
+          <div class="messages__empty">No messages yet</div>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="chat__input">
+        <input
+          type="text"
+          formControlName="message"
+          class="message-input"
+          name="message"
+          placeholder="Message"
+          autocomplete="off"
+        >
+        <div class="message-smiles">
+          😃
+          <div class="message-smiles__outer">
+            <span *ngFor="let smile of smiles" (click)="insertSmile(smile)">{{ smile }}</span>
+          </div>
+        </div>
+        <input type="submit"  class="message-button" value="Send">
+      </form>
+    </div>
+    <aside class="chat__users-list">
+      <div class="users-list">
+        <div class="users-list__item" *ngFor="let onlineUser of onlineUsers"> {{ onlineUser }} </div>
+      </div>
+    </aside>
+  </div>
+</div>

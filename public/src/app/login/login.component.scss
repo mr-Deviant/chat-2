@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+
+    &__field {
+      margin-bottom: 10px;
+    }
+
+    &__button {
+      align-self: flex-end;
+      margin-bottom: 10px;
+    }
+
+    &__caption {
+      color: grey;
+      font-size: 0.8em;
+    }
+  }
+}

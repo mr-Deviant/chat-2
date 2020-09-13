@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-error {
+  position: relative;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 3px;
+  color: #721c24;
+  padding: 5px 10px 5px 36px;
+  margin-bottom: 20px;
+
+  &::before {
+    content: '';
+    background: transparent url('../src/assets/error.svg') no-repeat;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+  }
+}

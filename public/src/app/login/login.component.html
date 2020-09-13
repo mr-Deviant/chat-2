@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="login-form">
+  <mat-form-field appearance="fill" class="login-form__field">
+    <mat-label>Login</mat-label>
+    <input matInput type="text" formControlName="username">
+    <mat-error *ngIf="username.errors?.required">Login is required</mat-error>
+    <mat-error *ngIf="username.errors?.minlength">Login must be at least 2 characters long</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="login-form__field">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password">
+    <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+    <mat-error *ngIf="password.errors?.minlength">Password must be at least 5 characters long</mat-error>
+    <mat-error *ngIf="password.errors?.incorrect">Password incorrect</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="login-form__button">Enter</button>
+
+  <div class="login-form__caption">If you are entering first time, you will be registered</div>
+</form>
+
